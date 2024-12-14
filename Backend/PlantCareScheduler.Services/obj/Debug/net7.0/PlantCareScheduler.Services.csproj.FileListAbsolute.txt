@@ -1,0 +1,17 @@
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Services.deps.json
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Services.dll
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Services.pdb
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Core.dll
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Data.dll
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Core.pdb
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/bin/Debug/net7.0/PlantCareScheduler.Data.pdb
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.csproj.AssemblyReference.cache
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.GeneratedMSBuildEditorConfig.editorconfig
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.AssemblyInfoInputs.cache
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.AssemblyInfo.cs
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.csproj.CoreCompileInputs.cache
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.csproj.CopyComplete
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.dll
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/refint/PlantCareScheduler.Services.dll
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/PlantCareScheduler.Services.pdb
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Services/obj/Debug/net7.0/ref/PlantCareScheduler.Services.dll

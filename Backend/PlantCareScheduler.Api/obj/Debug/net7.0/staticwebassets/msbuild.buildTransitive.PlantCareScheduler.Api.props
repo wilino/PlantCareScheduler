@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../buildMultiTargeting/PlantCareScheduler.Api.props" />
+</Project>

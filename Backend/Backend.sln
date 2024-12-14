@@ -5,6 +5,18 @@ VisualStudioVersion = 25.0.1706.14
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Api", "PlantCareScheduler.Api\PlantCareScheduler.Api.csproj", "{E164EE55-85CC-4D2F-8BDB-618B8F4067EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Core", "PlantCareScheduler.Core\PlantCareScheduler.Core.csproj", "{29F7EF44-6D30-4A14-B028-3A9F2F825249}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Data", "PlantCareScheduler.Data\PlantCareScheduler.Data.csproj", "{3C54410B-4024-487F-B527-257611F1E64A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Services", "PlantCareScheduler.Services\PlantCareScheduler.Services.csproj", "{E736A345-8E62-4B97-8047-593CF3344EFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Data", "PlantCareScheduler.Data\PlantCareScheduler.Data.csproj", "{5A49418D-C7CD-4DE4-AFD1-24D20E285486}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Services", "PlantCareScheduler.Services\PlantCareScheduler.Services.csproj", "{BD44EA36-DDC1-41C0-A3C7-000C79E75CB6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlantCareScheduler.Tests", "PlantCareScheduler.Tests\PlantCareScheduler.Tests.csproj", "{A1470B13-C2AE-440F-B3DB-D89E20ACE74B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +27,30 @@ Global
 		{E164EE55-85CC-4D2F-8BDB-618B8F4067EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E164EE55-85CC-4D2F-8BDB-618B8F4067EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E164EE55-85CC-4D2F-8BDB-618B8F4067EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29F7EF44-6D30-4A14-B028-3A9F2F825249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29F7EF44-6D30-4A14-B028-3A9F2F825249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29F7EF44-6D30-4A14-B028-3A9F2F825249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29F7EF44-6D30-4A14-B028-3A9F2F825249}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C54410B-4024-487F-B527-257611F1E64A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C54410B-4024-487F-B527-257611F1E64A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C54410B-4024-487F-B527-257611F1E64A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C54410B-4024-487F-B527-257611F1E64A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E736A345-8E62-4B97-8047-593CF3344EFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E736A345-8E62-4B97-8047-593CF3344EFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E736A345-8E62-4B97-8047-593CF3344EFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E736A345-8E62-4B97-8047-593CF3344EFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A49418D-C7CD-4DE4-AFD1-24D20E285486}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A49418D-C7CD-4DE4-AFD1-24D20E285486}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A49418D-C7CD-4DE4-AFD1-24D20E285486}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A49418D-C7CD-4DE4-AFD1-24D20E285486}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BD44EA36-DDC1-41C0-A3C7-000C79E75CB6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BD44EA36-DDC1-41C0-A3C7-000C79E75CB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BD44EA36-DDC1-41C0-A3C7-000C79E75CB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BD44EA36-DDC1-41C0-A3C7-000C79E75CB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1470B13-C2AE-440F-B3DB-D89E20ACE74B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1470B13-C2AE-440F-B3DB-D89E20ACE74B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1470B13-C2AE-440F-B3DB-D89E20ACE74B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1470B13-C2AE-440F-B3DB-D89E20ACE74B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

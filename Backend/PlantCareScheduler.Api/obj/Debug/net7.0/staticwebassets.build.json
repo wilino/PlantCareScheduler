@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "M1ntB7PtytDt/AFTZIoWAalbOwS8SQgpT57PZGLNI7s=",
+  "Source": "PlantCareScheduler.Api",
+  "BasePath": "_content/PlantCareScheduler.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
