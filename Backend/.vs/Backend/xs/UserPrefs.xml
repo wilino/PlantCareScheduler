@@ -1,76 +1,56 @@
 ﻿<Properties StartupConfiguration="{E164EE55-85CC-4D2F-8BDB-618B8F4067EE}|https">
-  <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="PlantCareScheduler.Api/DTOs/LocationDto.cs">
-    <Files>
-      <File FileName="PlantCareScheduler.Data/Repositories/Repository.cs" Line="25" Column="27" />
-      <File FileName="PlantCareScheduler.Data/Repositories/PlantRepository.cs" Line="3" Column="42" />
-      <File FileName="PlantCareScheduler.Data/Repositories/PlantTypeRepository.cs" Line="12" Column="6" />
-      <File FileName="PlantCareScheduler.Data/Repositories/PlantCareHistoryRepository.cs" Line="14" Column="10" />
-      <File FileName="PlantCareScheduler.Data/PlantDbContext.cs" Line="41" Column="1" />
-      <File FileName="PlantCareScheduler.Data/Repositories/LocationRepository.cs" Line="11" Column="1" />
-      <File FileName="PlantCareScheduler.Data/Utilities/ImageHelper.cs" Line="12" Column="1" />
-      <File FileName="PlantCareScheduler.Services/Interfaces/IPlantService.cs" Line="1" Column="40" />
-      <File FileName="PlantCareScheduler.Services/Imp/PlantService.cs" Line="65" Column="1" />
-      <File FileName="PlantCareScheduler.Core/Entities/Plant.cs" Line="13" Column="80" />
-      <File FileName="PlantCareScheduler.Core/Entities/PlantCareHistory.cs" Line="7" Column="50" />
-      <File FileName="PlantCareScheduler.Core/Entities/Location.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Core/Entities/PlantType.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Services/Interfaces/IPlantCareHistoryService.cs" Line="10" Column="51" />
-      <File FileName="PlantCareScheduler.Services/Imp/PlantCareHistoryService.cs" Line="17" Column="10" />
-      <File FileName="PlantCareScheduler.Api/DTOs/PlantCareHistoryDto.cs" Line="37" Column="2" />
-      <File FileName="PlantCareScheduler.Api/DTOs/ResponseDto.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Api/Controllers/PlantsController.cs" Line="60" Column="1" />
-      <File FileName="PlantCareScheduler.Api/DTOs/PlantDto.cs" Line="43" Column="40" />
-      <File FileName="PlantCareScheduler.Core/Interfaces/IPlantRepository.cs" Line="2" Column="1" />
-      <File FileName="PlantCareScheduler.Core/Interfaces/IPlantCareHistoryRepository.cs" Line="1" Column="40" />
-      <File FileName="PlantCareScheduler.Api/Controllers/PlantCareHistoryController.cs" Line="43" Column="10" />
-      <File FileName="PlantCareScheduler.Api/Program.cs" Line="28" Column="18" />
-      <File FileName="PlantCareScheduler.Tests/Usings.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Tests/Services/PlantServiceTests.cs" Line="67" Column="41" />
-      <File FileName="PlantCareScheduler.Tests/Services/PlantCareHistoryServiceTests.cs" Line="93" Column="37" />
-      <File FileName="PlantCareScheduler.Services/Interfaces/ILocationService.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Services/Interfaces/IPlantTypeService.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Services/Imp/LocationService.cs" Line="9" Column="43" />
-      <File FileName="PlantCareScheduler.Services/Imp/PlantTypeService.cs" Line="24" Column="44" />
-      <File FileName="PlantCareScheduler.Core/Interfaces/IPlantTypeRepository.cs" Line="5" Column="43" />
-      <File FileName="PlantCareScheduler.Core/Interfaces/ILocationRepository.cs" Line="7" Column="9" />
-      <File FileName="PlantCareScheduler.Api/Controllers/LocationController.cs" Line="63" Column="48" />
-      <File FileName="PlantCareScheduler.Api/Controllers/PlantTypeController.cs" Line="66" Column="48" />
-      <File FileName="PlantCareScheduler.Api/DTOs/LocationDto.cs" Line="18" Column="25" />
-      <File FileName="PlantCareScheduler.Api/DTOs/PlantTypeDto.cs" Line="22" Column="26" />
-      <File FileName="PlantCareScheduler.Core/Interfaces/IRepository.cs" Line="1" Column="1" />
-      <File FileName="PlantCareScheduler.Api/Parameters/AddPlantParam.cs" Line="22" Column="2" />
-    </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="Backend">
-            <Node name="PlantCareScheduler.Api" expanded="True">
-              <Node name="Controllers" expanded="True" />
-              <Node name="DTOs" expanded="True" />
-              <Node name="Parameters" expanded="True" />
-            </Node>
-            <Node name="PlantCareScheduler.Core" expanded="True">
-              <Node name="Entities" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
-            </Node>
-            <Node name="PlantCareScheduler.Data" expanded="True">
-              <Node name="Repositories" expanded="True" />
-              <Node name="Utilities" expanded="True" />
-            </Node>
-            <Node name="PlantCareScheduler.Services" expanded="True">
-              <Node name="Imp" expanded="True" />
-              <Node name="Interfaces" expanded="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
-  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.PlantCareScheduler.Api PreferredExecutionTarget="/System/Volumes/Preboot/Cryptexes/App/System/Applications/Safari.app" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="PlantCareScheduler.Api/DTOs/LocationDto.cs">
+    <Files>
+      <File FileName="PlantCareScheduler.Data/Repositories/Repository.cs" />
+      <File FileName="PlantCareScheduler.Data/Repositories/PlantRepository.cs" />
+      <File FileName="PlantCareScheduler.Data/Repositories/PlantTypeRepository.cs" />
+      <File FileName="PlantCareScheduler.Data/Repositories/PlantCareHistoryRepository.cs" />
+      <File FileName="PlantCareScheduler.Data/PlantDbContext.cs" />
+      <File FileName="PlantCareScheduler.Data/Repositories/LocationRepository.cs" />
+      <File FileName="PlantCareScheduler.Data/Utilities/ImageHelper.cs" />
+      <File FileName="PlantCareScheduler.Services/Interfaces/IPlantService.cs" />
+      <File FileName="PlantCareScheduler.Services/Imp/PlantService.cs" />
+      <File FileName="PlantCareScheduler.Core/Entities/Plant.cs" />
+      <File FileName="PlantCareScheduler.Core/Entities/PlantCareHistory.cs" />
+      <File FileName="PlantCareScheduler.Core/Entities/Location.cs" />
+      <File FileName="PlantCareScheduler.Core/Entities/PlantType.cs" />
+      <File FileName="PlantCareScheduler.Services/Interfaces/IPlantCareHistoryService.cs" />
+      <File FileName="PlantCareScheduler.Services/Imp/PlantCareHistoryService.cs" />
+      <File FileName="PlantCareScheduler.Api/DTOs/PlantCareHistoryDto.cs" />
+      <File FileName="PlantCareScheduler.Api/DTOs/ResponseDto.cs" />
+      <File FileName="PlantCareScheduler.Api/Controllers/PlantsController.cs" />
+      <File FileName="PlantCareScheduler.Api/DTOs/PlantDto.cs" />
+      <File FileName="PlantCareScheduler.Core/Interfaces/IPlantRepository.cs" />
+      <File FileName="PlantCareScheduler.Core/Interfaces/IPlantCareHistoryRepository.cs" />
+      <File FileName="PlantCareScheduler.Api/Controllers/PlantCareHistoryController.cs" />
+      <File FileName="PlantCareScheduler.Api/Program.cs" />
+      <File FileName="PlantCareScheduler.Tests/Usings.cs" />
+      <File FileName="PlantCareScheduler.Tests/Services/PlantServiceTests.cs" />
+      <File FileName="PlantCareScheduler.Tests/Services/PlantCareHistoryServiceTests.cs" />
+      <File FileName="PlantCareScheduler.Services/Interfaces/ILocationService.cs" />
+      <File FileName="PlantCareScheduler.Services/Interfaces/IPlantTypeService.cs" />
+      <File FileName="PlantCareScheduler.Services/Imp/LocationService.cs" />
+      <File FileName="PlantCareScheduler.Services/Imp/PlantTypeService.cs" />
+      <File FileName="PlantCareScheduler.Core/Interfaces/IPlantTypeRepository.cs" />
+      <File FileName="PlantCareScheduler.Core/Interfaces/ILocationRepository.cs" />
+      <File FileName="PlantCareScheduler.Api/Controllers/LocationController.cs" />
+      <File FileName="PlantCareScheduler.Api/Controllers/PlantTypeController.cs" />
+      <File FileName="PlantCareScheduler.Api/DTOs/LocationDto.cs" Line="18" Column="25" />
+      <File FileName="PlantCareScheduler.Api/DTOs/PlantTypeDto.cs" />
+      <File FileName="PlantCareScheduler.Core/Interfaces/IRepository.cs" />
+      <File FileName="PlantCareScheduler.Api/Parameters/AddPlantParam.cs" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__" />
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
 </Properties>
