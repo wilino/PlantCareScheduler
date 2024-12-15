@@ -38,8 +38,11 @@ namespace PlantCareScheduler.Services.Imp
             var endOfWeek = startOfWeek.AddDays(7);
 
             var histories = await _historyRepository.GetAllAsync();
-            return histories.Count(h => h.CareDate >= startOfWeek && h.CareDate < endOfWeek && h.CareType == "Watering");
+
+            return histories.Count(h =>
+                h.CareDate >= startOfWeek &&
+                h.CareDate < endOfWeek &&
+                h.CareType == "Watering");
         }
     }
 }
-

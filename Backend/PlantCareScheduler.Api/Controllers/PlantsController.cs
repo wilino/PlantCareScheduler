@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PlantCareScheduler.Api.DTOs;
+using PlantCareScheduler.Api.Parameters;
 using PlantCareScheduler.Core.Entities;
 using PlantCareScheduler.Services.Interfaces;
 
@@ -42,12 +43,21 @@ namespace PlantCareScheduler.Api.Controllers
         /// <summary>
         /// Adds a new plant to the system.
         /// </summary>
-        /// <param name="plantDto">The plant data to be added.</param>
-        /// <returns>The newly added plant details.</returns>
+        /// <param name="addPlantParam">The parameters required to create a new plant, provided in the request body.</param>
+        /// <returns>
+        /// An <see cref="ActionResult"/> containing a <see cref="ResponseDto{T}"/> with the details of the created plant 
+        /// or an error message if the operation fails.
+        /// </returns>
+        /// <remarks>
+        /// This endpoint expects a valid <see cref="AddPlantParam"/> object in the request body.
+        /// If the data is invalid, a 400 Bad Request response is returned with error details.
+        /// If the plant is successfully created, a 201 Created response is returned with the plant details.
+        /// If there is an internal error, a 500 Internal Server Error response is returned.
+        /// </remarks>
         [HttpPost]
-        public async Task<ActionResult<ResponseDto<PlantDto>>> AddPlant([FromBody] PlantDto plantDto)
+        public async Task<ActionResult<ResponseDto<PlantDto>>> AddPlant([FromBody] AddPlantParam param)
         {
-            if (plantDto == null)
+            if (param == null)
             {
                 return BadRequest(new ResponseDto<PlantDto>
                 {
@@ -58,8 +68,19 @@ namespace PlantCareScheduler.Api.Controllers
 
             try
             {
+                var plantDto = new PlantDto
+                {
+                    Id = Guid.NewGuid(), // Genera un nuevo ID
+                    Name = param.Name,
+                    PlantTypeId = param.PlantTypeId,
+                    LocationId = param.LocationId,
+                    WateringFrequencyDays = param.WateringFrequencyDays,
+                    ImageBase64 = param.ImageBase64
+                };
+
                 var plant = plantDto.ToEntity();
                 await _plantService.AddPlantAsync(plant);
+
                 return CreatedAtAction(nameof(GetPlantById), new { id = plant.Id }, new ResponseDto<PlantDto>
                 {
                     Data = new PlantDto(plant)
@@ -183,6 +204,39 @@ namespace PlantCareScheduler.Api.Controllers
             catch (Exception ex)
             {
                 return StatusCode(500, new ResponseDto<Dictionary<string, List<PlantDto>>>
+                {
+                    HasErrors = true,
+                    Errors = new List<string> { ex.Message }
+                });
+            }
+        }
+
+        /// <summary>
+        /// Retrieves the watering status of a specific plant by its ID.
+        /// </summary>
+        /// <param name="id">The ID of the plant.</param>
+        /// <returns>The watering status of the plant.</returns>
+        [HttpGet("{id}/status")]
+        public async Task<ActionResult<ResponseDto<string>>> GetPlantWateringStatus(Guid id)
+        {
+            try
+            {
+                var plant = await _plantService.GetPlantByIdAsync(id);
+                if (plant == null)
+                {
+                    return NotFound(new ResponseDto<string>
+                    {
+                        HasErrors = true,
+                        Errors = new List<string> { "Plant not found." }
+                    });
+                }
+
+                var status = await _plantService.GetWateringStatusAsync(plant);
+                return Ok(new ResponseDto<string> { Data = status });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new ResponseDto<string>
                 {
                     HasErrors = true,
                     Errors = new List<string> { ex.Message }

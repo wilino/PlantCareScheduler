@@ -1,0 +1,34 @@
+/* Reset básico */
+body, html {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; /* Material-UI recomienda esta fuente */
+    background-color: #f5f5f5; /* Fondo claro */
+    color: #333; /* Texto principal */
+  }
+  
+  /* Estilo global para títulos */
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+    padding: 0;
+    font-weight: 500;
+  }
+  
+  /* Para contenedores principales */
+  .container {
+    padding: 1rem;
+  }
+  
+  /* Clases utilitarias */
+  .text-center {
+    text-align: center;
+  }
+  
+  .mt-2 {
+    margin-top: 2rem;
+  }
+  
+  .mb-2 {
+    margin-bottom: 2rem;
+  }

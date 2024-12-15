@@ -20,6 +20,17 @@
           "PlantCareScheduler.Api.dll": {}
         }
       },
+      "Castle.Core/5.1.0": {
+        "dependencies": {
+          "System.Diagnostics.EventLog": "6.0.0"
+        },
+        "runtime": {
+          "lib/net6.0/Castle.Core.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.1.0.0"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "runtime": {
           "lib/net6.0/Humanizer.dll": {
@@ -83,6 +94,18 @@
         },
         "runtime": {
           "lib/net6.0/Microsoft.EntityFrameworkCore.InMemory.dll": {
+            "assemblyVersion": "7.0.20.0",
+            "fileVersion": "7.0.2024.26903"
+          }
+        }
+      },
+      "Microsoft.EntityFrameworkCore.Proxies/7.0.20": {
+        "dependencies": {
+          "Castle.Core": "5.1.0",
+          "Microsoft.EntityFrameworkCore": "7.0.20"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll": {
             "assemblyVersion": "7.0.20.0",
             "fileVersion": "7.0.2024.26903"
           }
@@ -224,6 +247,7 @@
           }
         }
       },
+      "System.Diagnostics.EventLog/6.0.0": {},
       "System.Text.Encodings.Web/7.0.0": {},
       "System.Text.Json/7.0.0": {
         "dependencies": {
@@ -238,6 +262,7 @@
       "PlantCareScheduler.Data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Microsoft.EntityFrameworkCore.Proxies": "7.0.20",
           "PlantCareScheduler.Core": "1.0.0"
         },
         "runtime": {
@@ -260,6 +285,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Castle.Core/5.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-31UJpTHOiWq95CDOHazE3Ub/hE/PydNWsJMwnEVTqFFP4WhAugwpaVGxzOxKgNeSUUeqS2W6lxV+q7u1pAOfXg==",
+      "path": "castle.core/5.1.0",
+      "hashPath": "castle.core.5.1.0.nupkg.sha512"
     },
     "Humanizer.Core/2.14.1": {
       "type": "package",
@@ -309,6 +341,13 @@
       "sha512": "sha512-7JTLY2EnzE0FDa1IzXvEZxcHgbPBboECY/zCQBuT1Lt+2Yqs5MrW77eNmg0/PPiMj/+HyiF9QaFRKbLUR1jFcw==",
       "path": "microsoft.entityframeworkcore.inmemory/7.0.20",
       "hashPath": "microsoft.entityframeworkcore.inmemory.7.0.20.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Proxies/7.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b+PqL+F0MHRGxXi8hV7wbvXUFq7nsG5ZvVDiDmy8Ya7OyIYwfcQCQWxTcus1/bKib+aPZgxX3CGBRNoQqo3kIA==",
+      "path": "microsoft.entityframeworkcore.proxies/7.0.20",
+      "hashPath": "microsoft.entityframeworkcore.proxies.7.0.20.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore.Relational/7.0.20": {
       "type": "package",
@@ -449,6 +488,13 @@
       "sha512": "sha512-2sCCb7doXEwtYAbqzbF/8UAeDRMNmPaQbU2q50Psg1J9KzumyVVCgKQY8s53WIPTufNT0DpSe9QRvVjOzfDWBA==",
       "path": "system.codedom/4.4.0",
       "hashPath": "system.codedom.4.4.0.nupkg.sha512"
+    },
+    "System.Diagnostics.EventLog/6.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-lcyUiXTsETK2ALsZrX+nWuHSIQeazhqPphLfaRxzdGaG93+0kELqpgEHtwWOlQe7+jSFnKwaCAgL4kjeZCQJnw==",
+      "path": "system.diagnostics.eventlog/6.0.0",
+      "hashPath": "system.diagnostics.eventlog.6.0.0.nupkg.sha512"
     },
     "System.Text.Encodings.Web/7.0.0": {
       "type": "package",

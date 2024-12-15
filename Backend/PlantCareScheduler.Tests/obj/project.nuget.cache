@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "DcLR93QpxBoXr7ZJ1bi2mewq0yw3nAHMi+Fr1cplaLDuM2F1lNHC7IyhwRKnbHtjyStztO4npVKcNMe+iUeEiw==",
+  "dgSpecHash": "wC9uj6oOdy3nMjIzcLPxmyr9d1BEj7+uHGKIxk88SiFdUuqjr24+cOSUTFxCwEGqWQplPa6r5Z9t5jYh9jev3w==",
   "success": true,
   "projectFilePath": "/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/PlantCareScheduler.Tests.csproj",
   "expectedPackageFiles": [
@@ -10,6 +10,7 @@
     "/Users/willy-mac/.nuget/packages/microsoft.entityframeworkcore/7.0.20/microsoft.entityframeworkcore.7.0.20.nupkg.sha512",
     "/Users/willy-mac/.nuget/packages/microsoft.entityframeworkcore.abstractions/7.0.20/microsoft.entityframeworkcore.abstractions.7.0.20.nupkg.sha512",
     "/Users/willy-mac/.nuget/packages/microsoft.entityframeworkcore.analyzers/7.0.20/microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512",
+    "/Users/willy-mac/.nuget/packages/microsoft.entityframeworkcore.proxies/7.0.20/microsoft.entityframeworkcore.proxies.7.0.20.nupkg.sha512",
     "/Users/willy-mac/.nuget/packages/microsoft.extensions.caching.abstractions/7.0.0/microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "/Users/willy-mac/.nuget/packages/microsoft.extensions.caching.memory/7.0.0/microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
     "/Users/willy-mac/.nuget/packages/microsoft.extensions.dependencyinjection/7.0.0/microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",

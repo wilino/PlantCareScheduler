@@ -2,7 +2,6 @@
 using PlantCareScheduler.Core.Interfaces;
 using PlantCareScheduler.Services.Interfaces;
 
-
 namespace PlantCareScheduler.Services.Imp
 {
     public class PlantService : IPlantService
@@ -18,29 +17,46 @@ namespace PlantCareScheduler.Services.Imp
 
         public async Task<DateTime> GetNextWateringDateAsync(Plant plant)
         {
-            return await Task.FromResult(plant.LastWateredDate.AddDays(plant.WateringFrequencyDays));
+            return plant.LastWateredDate.AddDays(plant.WateringFrequencyDays);
+        }
+
+        private double CalculateElapsedPercentage(Plant plant)
+        {
+            var lastWateredDate = plant.LastWateredDate;
+            var nextWateringDate = lastWateredDate.AddDays(plant.WateringFrequencyDays);
+
+            var totalDuration = (nextWateringDate - lastWateredDate).TotalMinutes;
+            var elapsedDuration = (DateTime.Now - lastWateredDate).TotalMinutes;
+
+            return (elapsedDuration / totalDuration) * 100;
         }
 
         public async Task<string> GetWateringStatusAsync(Plant plant)
         {
-            var nextWateringDate = await GetNextWateringDateAsync(plant);
-            var daysUntilNextWatering = (nextWateringDate - DateTime.Now).Days;
+            var percentageElapsed = CalculateElapsedPercentage(plant);
 
-            if (daysUntilNextWatering < 0)
+            if (percentageElapsed >= 100)
+            {
                 return "Overdue"; // Atrasado
-            else if (daysUntilNextWatering <= 3)
+            }
+            else if (percentageElapsed >= 70)
+            {
                 return "Due Soon"; // Próximo
+            }
             else
+            {
                 return "OK"; // En orden
+            }
         }
 
         public async Task<List<Plant>> GetPlantsOrderedByUrgencyAsync()
         {
             var plants = await _plantRepository.GetAllAsync();
+
             return plants.OrderBy(plant =>
             {
                 var nextWateringDate = plant.LastWateredDate.AddDays(plant.WateringFrequencyDays);
-                return (nextWateringDate - DateTime.Now).Days; 
+                return (nextWateringDate - DateTime.Now).Days;
             }).ToList();
         }
 
@@ -61,12 +77,36 @@ namespace PlantCareScheduler.Services.Imp
 
         public async Task<Plant> GetPlantByIdAsync(Guid id)
         {
-            return await _plantRepository.GetByIdAsync(id);
+            var plant = await _plantRepository.GetByIdAsync(id);
+
+            if (plant != null)
+            {
+                _ = plant.PlantType;
+                _ = plant.Location;
+
+                plant.ImageBase64 = !string.IsNullOrEmpty(plant.ImageBase64)
+                    ? plant.ImageBase64
+                    : plant.PlantType?.DefaultImageBase64;
+            }
+
+            return plant;
         }
 
         public async Task<List<Plant>> GetAllPlantsAsync()
         {
-            return await _plantRepository.GetAllAsync();
+            var plants = await _plantRepository.GetAllAsync();
+
+            foreach (var plant in plants)
+            {
+                _ = plant.PlantType;
+                _ = plant.Location;
+
+                plant.ImageBase64 = !string.IsNullOrEmpty(plant.ImageBase64)
+                    ? plant.ImageBase64
+                    : plant.PlantType?.DefaultImageBase64;
+            }
+
+            return plants;
         }
 
         public async Task<string?> GetPlantImageAsync(Guid plantId)
@@ -75,13 +115,9 @@ namespace PlantCareScheduler.Services.Imp
             if (plant == null)
                 return null;
 
-            if (!string.IsNullOrEmpty(plant.ImageBase64))
-                return plant.ImageBase64;
-
-            if (plant.PlantType != null && !string.IsNullOrEmpty(plant.PlantType.DefaultImageBase64))
-                return plant.PlantType.DefaultImageBase64;
-
-            return null;
+            return !string.IsNullOrEmpty(plant.ImageBase64)
+                ? plant.ImageBase64
+                : plant.PlantType?.DefaultImageBase64;
         }
 
         public async Task RecordWateringAsync(Guid plantId)
@@ -89,6 +125,22 @@ namespace PlantCareScheduler.Services.Imp
             var plant = await _plantRepository.GetByIdAsync(plantId);
             if (plant == null)
                 throw new Exception("Plant not found.");
+
+            var percentageElapsed = CalculateElapsedPercentage(plant);
+            string notes;
+
+            if (percentageElapsed >= 100)
+            {
+                notes = "Watered late";
+            }
+            else if (percentageElapsed < 100 && percentageElapsed >= 70)
+            {
+                notes = "Watered on time";
+            }
+            else
+            {
+                notes = "Watered too early";
+            }
 
             plant.LastWateredDate = DateTime.Now;
             await _plantRepository.UpdateAsync(plant);
@@ -99,8 +151,9 @@ namespace PlantCareScheduler.Services.Imp
                 PlantId = plantId,
                 CareType = "Watering",
                 CareDate = DateTime.Now,
-                Notes = "Watered"
+                Notes = notes
             };
+
             await _historyRepository.AddAsync(history);
         }
     }

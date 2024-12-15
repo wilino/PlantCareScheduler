@@ -10,6 +10,7 @@
 /Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.VisualStudio.CodeCoverage.Shim.dll
 /Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.dll
 /Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Abstractions.dll
+/Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.EntityFrameworkCore.Proxies.dll
 /Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.Extensions.Caching.Abstractions.dll
 /Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.Extensions.Caching.Memory.dll
 /Users/willy-mac/Documents/PlantCareScheduler/PlantCareScheduler/Backend/PlantCareScheduler.Tests/bin/Debug/net7.0/Microsoft.Extensions.DependencyInjection.dll

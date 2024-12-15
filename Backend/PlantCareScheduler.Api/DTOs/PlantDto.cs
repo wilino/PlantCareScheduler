@@ -39,8 +39,11 @@ namespace PlantCareScheduler.Api.DTOs
                 PlantTypeId = PlantTypeId,
                 LocationId = LocationId,
                 WateringFrequencyDays = WateringFrequencyDays,
-                LastWateredDate = LastWateredDate
+                LastWateredDate = LastWateredDate,
+                ImageBase64=ImageBase64
             };
         }
     }
 }
+
+

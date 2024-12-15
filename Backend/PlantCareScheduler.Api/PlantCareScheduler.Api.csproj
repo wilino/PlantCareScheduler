@@ -27,10 +27,12 @@
     <None Remove="DTOs\" />
     <None Remove="Controllers\" />
     <None Remove="DefaultImages\" />
+    <None Remove="Parameters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DTOs\" />
     <Folder Include="Controllers\" />
     <Folder Include="DefaultImages\" />
+    <Folder Include="Parameters\" />
   </ItemGroup>
 </Project>

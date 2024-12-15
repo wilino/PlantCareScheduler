@@ -63,6 +63,18 @@
         }
       },
       "Microsoft.EntityFrameworkCore.Analyzers/7.0.20": {},
+      "Microsoft.EntityFrameworkCore.Proxies/7.0.20": {
+        "dependencies": {
+          "Castle.Core": "5.1.1",
+          "Microsoft.EntityFrameworkCore": "7.0.20"
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.EntityFrameworkCore.Proxies.dll": {
+            "assemblyVersion": "7.0.20.0",
+            "fileVersion": "7.0.2024.26903"
+          }
+        }
+      },
       "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
         "dependencies": {
           "Microsoft.Extensions.Primitives": "7.0.0"
@@ -1185,6 +1197,7 @@
       "PlantCareScheduler.Data/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "7.0.20",
+          "Microsoft.EntityFrameworkCore.Proxies": "7.0.20",
           "PlantCareScheduler.Core": "1.0.0"
         },
         "runtime": {
@@ -1249,6 +1262,13 @@
       "sha512": "sha512-doouHLWFcYcd08QUh9+4aZu3sk4WySp/aSOHeIzNhMJ58ESQXUAGDvB1sjJ4HmE0tmCea51NGzgtHE5IBmFLGg==",
       "path": "microsoft.entityframeworkcore.analyzers/7.0.20",
       "hashPath": "microsoft.entityframeworkcore.analyzers.7.0.20.nupkg.sha512"
+    },
+    "Microsoft.EntityFrameworkCore.Proxies/7.0.20": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-b+PqL+F0MHRGxXi8hV7wbvXUFq7nsG5ZvVDiDmy8Ya7OyIYwfcQCQWxTcus1/bKib+aPZgxX3CGBRNoQqo3kIA==",
+      "path": "microsoft.entityframeworkcore.proxies/7.0.20",
+      "hashPath": "microsoft.entityframeworkcore.proxies.7.0.20.nupkg.sha512"
     },
     "Microsoft.Extensions.Caching.Abstractions/7.0.0": {
       "type": "package",
