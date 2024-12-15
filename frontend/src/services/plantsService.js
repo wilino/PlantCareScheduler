@@ -158,6 +158,16 @@ export const addPlantType = async (plantType) => {
     }
 };
 
+export const getWateredThisWeekStats = async () => {
+    try {
+        const response = await axios.get(`${BASE_URL}/PlantCareHistory/stats/watered-this-week`);
+        return handleResponse(response);
+    } catch (error) {
+        console.error('Error fetching watered-this-week stats:', error);
+        throw error;
+    }
+};
+
 const capitalizeName = (name) => {
     if (!name.trim()) return '';
     return name.trim().charAt(0).toUpperCase() + name.trim().slice(1).toLowerCase();

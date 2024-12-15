@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Typography, Box } from '@mui/material';
-import { ErrorOutline, WarningAmber, CheckCircle } from '@mui/icons-material'; // Íconos para cada estado
+import { Typography, Box, Chip } from '@mui/material';
+import { ErrorOutline, WarningAmber, CheckCircle } from '@mui/icons-material';
 import { getPlantWateringStatus } from '../../services/plantsService';
 
 function PlantStatus({ plantId, refreshStatus }) {
   const [status, setStatus] = useState('Loading...');
-  const [color, setColor] = useState('textSecondary');
-  const [icon, setIcon] = useState(null);
+  const [chipProps, setChipProps] = useState({});
   const [error, setError] = useState(null);
 
   const fetchStatus = async () => {
@@ -15,23 +14,34 @@ function PlantStatus({ plantId, refreshStatus }) {
       const result = await getPlantWateringStatus(plantId);
       setStatus(result);
 
-      // Cambiar color e ícono dependiendo del estado
+      // Configurar Chip según el estado
       switch (result) {
         case 'Overdue':
-          setColor('error');
-          setIcon(<ErrorOutline color="error" sx={{ mr: 1 }} />);
+          setChipProps({
+            label: 'Overdue',
+            color: 'error',
+            icon: <ErrorOutline sx={{ color: 'inherit' }} />,
+          });
           break;
         case 'Due Soon':
-          setColor('warning.main');
-          setIcon(<WarningAmber sx={{ color: 'warning.main', mr: 1 }} />);
+          setChipProps({
+            label: 'Due Soon',
+            sx: { backgroundColor: 'warning.main', color: '#fff' },
+            icon: <WarningAmber sx={{ color: '#fff' }} />,
+          });
           break;
         case 'OK':
-          setColor('success.main');
-          setIcon(<CheckCircle sx={{ color: 'success.main', mr: 1 }} />);
+          setChipProps({
+            label: 'OK',
+            color: 'success',
+            icon: <CheckCircle sx={{ color: 'inherit' }} />,
+          });
           break;
         default:
-          setColor('textSecondary');
-          setIcon(null);
+          setChipProps({
+            label: 'Unknown',
+            sx: { backgroundColor: 'text.secondary', color: '#fff' },
+          });
       }
     } catch (err) {
       setError('Failed to fetch status');
@@ -39,24 +49,34 @@ function PlantStatus({ plantId, refreshStatus }) {
   };
 
   useEffect(() => {
-    // Llamar a fetchStatus cuando se monte el componente o cambie refreshStatus
     fetchStatus();
-  }, [plantId, refreshStatus]); // Escucha cambios en refreshStatus
+  }, [plantId, refreshStatus]);
 
   if (error) {
     return (
-      <Typography variant="body2" color="error">
+      <Typography variant="body2" color="error" sx={{ mt: 1 }}>
         {error}
       </Typography>
     );
   }
 
-  return (
-    <Box display="flex" alignItems="center">
-      {icon}
-      <Typography variant="body2" sx={{ color }}>
-        Status: {status}
+  if (status === 'Loading...') {
+    return (
+      <Typography variant="body2" color="textSecondary" sx={{ mt: 1 }}>
+        {status}
       </Typography>
+    );
+  }
+
+  return (
+    <Box sx={{ mt: 1 }}>
+      <Chip
+        {...chipProps}
+        sx={{
+          fontWeight: 'bold',
+          ...chipProps.sx
+        }}
+      />
     </Box>
   );
 }

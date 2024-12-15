@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import {
   Card,
-  CardMedia,
   CardContent,
   Typography,
   Button,
@@ -11,8 +10,12 @@ import {
   Alert,
   IconButton,
   Tooltip,
+  CardHeader,
+  Chip,
+  Stack,
+  Divider
 } from '@mui/material';
-import { WaterDrop, Schedule, Place, Opacity, History } from '@mui/icons-material'; // Íconos
+import { WaterDrop, Schedule, Place, Opacity, History } from '@mui/icons-material';
 import { waterPlant, getPlantById, getPlantCareHistory } from '../../services/plantsService';
 import PlantStatus from './PlantStatus';
 import PlantHistoryPopup from './PlantHistoryPopup';
@@ -87,90 +90,112 @@ function PlantCard({ plant: initialPlant }) {
     calculateTimeRemaining();
     const interval = setInterval(calculateTimeRemaining, 1000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [plant.lastWateredDate, plant.wateringFrequencyDays]);
+
+  // Formato de la última fecha de riego
+  let lastWateredDisplay;
+  if (plant.lastWateredDate === '0001-01-01T00:00:00') {
+    lastWateredDisplay = 'No watering recorded';
+  } else {
+    const lastWatered = new Date(plant.lastWateredDate);
+    lastWateredDisplay = lastWatered.toLocaleDateString('en-US'); // Formato: MM/DD/YYYY
+  }
 
   return (
     <>
-      <Card sx={{ maxWidth: 345, margin: '0 auto', boxShadow: 3 }}>
-        {plant.imageBase64 && (
-          <CardMedia
-            component="img"
-            height="180"
-            image={plant.imageBase64}
-            alt={plant.name}
-          />
-        )}
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {plant.name}
+      <Card sx={{ maxWidth: 345, margin: '0 auto', boxShadow: 3, borderRadius: 3, overflow: 'hidden' }}>
+        {/* Imagen con overlay degradado */}
+        <Box 
+          sx={{
+            position: 'relative',
+            height: 180,
+            background: plant.imageBase64
+              ? `url(${plant.imageBase64}) no-repeat center/cover`
+              : 'linear-gradient(to bottom right, #e3f2fd, #90caf9)',
+          }}
+        >
+          {!plant.imageBase64 && (
+            <Typography
+              variant="h6"
+              sx={{
+                position: 'absolute',
+                bottom: 8,
+                left: 8,
+                color: '#fff',
+                fontWeight: 'bold',
+                textShadow: '0 0 5px rgba(0,0,0,0.5)',
+              }}
+            >
+              No Image
+            </Typography>
+          )}
+        </Box>
+        
+        <CardHeader
+          title={plant.name}
+          titleTypographyProps={{ variant: 'h5', fontWeight: 'bold' }}
+          sx={{ pt: 2, pb: 0 }}
+        />
+
+        <CardContent sx={{ pt: 1 }}>
+          <Stack direction="row" spacing={1} alignItems="center" sx={{ mb: 1 }}>
+            <Chip
+              icon={<Opacity />}
+              label={plant.plantTypeName}
+              color="primary"
+              variant="outlined"
+              sx={{ fontWeight: 'bold' }}
+            />
+            <Chip
+              icon={<Place />}
+              label={plant.locationName}
+              color="secondary"
+              variant="outlined"
+              sx={{ fontWeight: 'bold' }}
+            />
+          </Stack>
+
+          <Divider sx={{ my: 2 }} />
+
+          <Typography variant="body1" sx={{ mb: 1 }}>
+            <strong>Last Watered:</strong> {lastWateredDisplay}
           </Typography>
 
-          {/* Tipo de planta */}
-          <Box display="flex" alignItems="center" sx={{ mt: 1 }}>
-            <Opacity color="primary" sx={{ mr: 1 }} />
-            <Typography variant="body2">
-              <strong>Type:</strong> {plant.plantTypeName}
-            </Typography>
-          </Box>
+          <Typography variant="body1" sx={{ mb: 1 }}>
+            <strong>Water Every:</strong> {plant.wateringFrequencyDays} days
+          </Typography>
 
-          {/* Ubicación */}
-          <Box display="flex" alignItems="center" sx={{ mt: 1 }}>
-            <Place color="secondary" sx={{ mr: 1 }} />
-            <Typography variant="body2">
-              <strong>Location:</strong> {plant.locationName}
-            </Typography>
-          </Box>
-
-          {/* Último riego */}
-          <Box display="flex" alignItems="center" sx={{ mt: 1 }}>
-            <WaterDrop color="info" sx={{ mr: 1 }} />
-            <Typography variant="body2">
-              <strong>Last Watered:</strong> {new Date(plant.lastWateredDate).toLocaleDateString()}
-            </Typography>
-          </Box>
-
-          {/* Frecuencia de riego */}
-          <Box display="flex" alignItems="center" sx={{ mt: 1 }}>
-            <Schedule color="action" sx={{ mr: 1 }} />
-            <Typography variant="body2">
-              <strong>Water Every:</strong> {plant.wateringFrequencyDays} days
-            </Typography>
-          </Box>
-
-          {/* Tiempo restante o "WATER NOW" */}
           {isOverdue ? (
             <Typography
-              variant="body2"
+              variant="body1"
               color="error"
               sx={{
                 animation: 'blink 1s step-start infinite',
                 '@keyframes blink': {
                   '50%': { opacity: 0 },
                 },
-                mt: 1,
+                fontWeight: 'bold',
+                mb: 1,
               }}
             >
               {timeRemaining}
             </Typography>
           ) : (
-            <Box display="flex" alignItems="center" sx={{ mt: 1 }}>
-              <Schedule color="success" sx={{ mr: 1 }} />
-              <Typography variant="body2">
-                <strong>Next watering in:</strong> {timeRemaining}
-              </Typography>
-            </Box>
+            <Typography variant="body1" sx={{ mb: 1 }}>
+              <strong>Next watering in:</strong> {timeRemaining}
+            </Typography>
           )}
 
-          {/* Usamos el componente PlantStatus */}
           <PlantStatus plantId={plant.id} refreshStatus={refreshStatus} />
         </CardContent>
-        <CardActions>
+
+        <CardActions sx={{ justifyContent: 'space-between', px: 2, pb: 2 }}>
           <Button
             onClick={handleWaterPlant}
             variant="contained"
             color="primary"
             size="small"
-            fullWidth
           >
             Water Plant
           </Button>
@@ -182,7 +207,6 @@ function PlantCard({ plant: initialPlant }) {
         </CardActions>
       </Card>
 
-      {/* Popup del historial */}
       <PlantHistoryPopup
         open={historyPopupOpen}
         onClose={() => setHistoryPopupOpen(false)}
@@ -192,7 +216,6 @@ function PlantCard({ plant: initialPlant }) {
         location={plant.locationName}
       />
 
-      {/* Snackbar para mostrar mensajes */}
       <Snackbar
         open={snackbarOpen}
         autoHideDuration={4000}

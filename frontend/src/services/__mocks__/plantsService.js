@@ -1,0 +1,11 @@
+export const getWateredThisWeekStats = jest.fn();
+export const getPlants = jest.fn();
+export const addPlant = jest.fn();
+export const waterPlant = jest.fn();
+export const getPlantWateringStatus = jest.fn();
+export const getPlantById = jest.fn();
+export const getPlantCareHistory = jest.fn();
+export const getPlantTypes = jest.fn();
+export const getLocations = jest.fn();
+export const addLocation = jest.fn();
+export const addPlantType = jest.fn();
