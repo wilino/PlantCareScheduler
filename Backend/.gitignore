@@ -1,0 +1,57 @@
+# Build results
+bin/
+obj/
+out/
+
+# VS Code directories
+.vscode/
+
+# User-specific files
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Logs
+*.log
+
+# NuGet Packages
+*.nupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio working files
+.vs/
+
+# Rider directories
+.idea/
+*.sln.iml
+
+# OS generated files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Temporary files
+*.tmp
+*.temp
+*.cache
+
+# Backup files
+*.bak
+~$*
+
+# IIS Express configuration
+/.vs/Config/applicationhost.config
+/.vs/Config/
+
+# Secrets
+secrets.json
+
+# Appsettings (for environment-specific settings)
+appsettings.*.json
+
+# Entity Framework Migrations
+Migrations/
